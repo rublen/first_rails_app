@@ -23,7 +23,6 @@ class ArticlesController < ApplicationController
 
 	def destroy
 		@article = Article.find(params[:id])
-		return if [5, 6, 7, 8, 9, 13, 14, 16, 17, 20].include?(@article.id)
 		flash.notice = "Article '#{@article.title}' Deleted!"
 		@article.destroy
 		redirect_to articles_path
