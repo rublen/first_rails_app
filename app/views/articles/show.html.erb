@@ -7,6 +7,10 @@
   <% end %>
 </p>
 
+<p>
+	<%= image_tag @article.image.url if @article.image.exists? %>
+</p>
+
 <h3><%= @article.body %></h3>
 
 <h4>Comments(<%= @article.comments.size %>)</h4>
