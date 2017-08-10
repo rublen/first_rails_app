@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Authors</h1>
+
+<style type="text/css">
+   TABLE {background: silver; 
+          font-weight: bold; 
+          text-align: left; }
+   TD, TH { padding: 5px;
+            border-bottom: 1px solid black; }
+   TH { background: #4682b4;
+        color: white; }
+</style>
+
+<table cellspacing="50">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.username %></td>
+        <td><%= author.email %></td>
+        <% if logged_in? && author != Author.first%>
+        <td><%= link_to 'Show', author %></td>
+        <td><%= link_to 'Edit', edit_author_path(author) %></td>
+        <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Author', new_author_path if logged_in? %> <br />
+<%= link_to "<< To Articles List", articles_path %>
+

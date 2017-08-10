@@ -13,18 +13,18 @@
 
 <h3><%= @article.body %></h3>
 
+<%= link_to "<< To Articles List", articles_path %> <br />
+
+<%= link_to "<< To Tags List", tags_path %> <br />
+
+<% if logged_in? && @article != Article.first%>
+<%= link_to ">> Edit", edit_article_path(@article) %> <br />
+
+<%= link_to "[X]  Delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
+<% end %>
+
 <h4>Comments(<%= @article.comments.size %>)</h4>
 
 <%= render partial: 'articles/comment', collection: @article.comments %>
 
 <%= render partial: 'comments/form' %>
-
-<%= link_to "<< To Articles List", articles_path %> <br />
-
-<%= link_to "<< To Tags List", tags_path %> <br />
-
-<%= link_to ">> Edit", edit_article_path(@article) %> <br />
-
-<%= link_to "[X]  Delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
-
-
