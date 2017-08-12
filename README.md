@@ -1,9 +1,6 @@
-Blogger - my first app. It's done whithin The Odin Project with tutorial http://tutorials.jumpstartlab.com/projects/blogger.html
+Blogger is my first app. It's done whithin The Odin Project with tutorial http://tutorials.jumpstartlab.com/projects/blogger.html
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-To make sure that everyone could login and try my app I blocked from deleting and changing first article with instructions and first author, whos email and password everyone can get from the first artickle 'README'. To get off this blocking you need modify actions destroy and update in articles_controller.rb and authors_controller.rb and modify articles/show.html.erb and authors/show.html.erb - find statements about Article.first and Author.first and delete them.
+To be sure that everyone can login and try my app I blocked from deleting and changing first article with instructions and first author, whos email and password can be got from this first article 'README'. To get off this blocking you need modify actions 'destroy' and 'update' in articles_controller.rb and authors_controller.rb and modify articles/show.html.erb, authors/show.html.erb, authors/index.html.erb - find statements about 'Article.first' and 'Author.first' and delete them.
 
 * Ruby version - 2.3.3
 
